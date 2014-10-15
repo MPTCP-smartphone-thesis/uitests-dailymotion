@@ -16,12 +16,21 @@ public class LaunchSettings extends UiAutomatorTestCase {
  Utils.openApp(this, "Dailymotion",
 				"com.dailymotion.dailymotion"));
 		sleep(3000);
+
 		UiScrollable list = Utils.getScrollableWithId(ID_VIDEO_LIST);
 
 		if (!list.exists()) {
 			getUiDevice().pressBack();
 			list = Utils.getScrollableWithId(ID_VIDEO_LIST);
 		}
+
+		assertTrue(Utils.clickAndWaitForNewWindow(Utils
+				.getObjectWithDescription("Open menu")));
+
+		assertTrue(Utils.click(Utils.getObjectWithClassName(
+				"android.widget.RelativeLayout", 1)));
+
+		sleep(5000);
 
 		while(Utils.scrollForward(list)) {
 			int nb_childs = Utils.getChildCount(list);
