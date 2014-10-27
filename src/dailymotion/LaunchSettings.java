@@ -32,7 +32,8 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 		sleep(5000);
 
-		while(Utils.scrollForward(list)) {
+		Utils.launchTcpdump("dailymotion", 900);
+		for (int k = 0; k < 3 && Utils.scrollForward(list); k++) {
 			int nb_childs = Utils.getChildCount(list);
 			
 			for (int i = 0; i < nb_childs - 1; i++) {
@@ -42,6 +43,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				getUiDevice().pressBack();
 			}
 		}
+		Utils.killTcpdump();
 	}
 
 }
