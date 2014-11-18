@@ -64,16 +64,17 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		// sleep(5000);
 
 		Utils.launchTcpdump("dailymotion", 900);
-		for (int k = 0; k < 3 && Utils.scrollForward(list); k++) {
+		int nVid = 0;
+		while (nVid < 10 && Utils.scrollForward(list)) {
 			int nb_childs = Utils.getChildCount(list);
-			
-			for (int i = 0; i < nb_childs - 1; i++) {
+
+			for (int i = 0; nVid < 10 && i < nb_childs - 1; i++, nVid++) {
 				// assertTrue("Cannot see video...",
 				// Utils.click(Utils.getObjectWithId(ID_VIDEO_CARD, i)));
 				assertTrue("Cannot see video...", Utils.click(Utils
 						.getObjectWithClassName(
 								"android.widget.RelativeLayout", i)));
-				sleep(60000);
+				sleep(30000);
 				getUiDevice().pressBack();
 			}
 		}
