@@ -67,8 +67,8 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		assertTrue("OOOOOpps", Utils.openApp(this, "Dailymotion",
 				"com.dailymotion.dailymotion"));
 		sleep(3000);
-		goToThePlaylist();
 		Utils.launchTcpdump("dailymotion", 900);
+		goToThePlaylist();
 		seeVideos();
 		Utils.killTcpdump();
 	}
