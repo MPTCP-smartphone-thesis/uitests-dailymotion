@@ -10,11 +10,11 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 public class LaunchSettings extends UiAutomatorTestCase {
 
-	private static String ID_VIDEO_LIST = "com.dailymotion.dailymotion:id/channelListView";
-	private static String ID_SEARCH = "com.dailymotion.dailymotion:id/searchItem";
-	private static String ID_TEXT = "com.dailymotion.dailymotion:id/search_src_text";
+	private static final String ID_VIDEO_LIST = "com.dailymotion.dailymotion:id/channelListView";
+	private static final String ID_SEARCH = "com.dailymotion.dailymotion:id/searchItem";
+	private static final String ID_TEXT = "com.dailymotion.dailymotion:id/search_src_text";
 
-	private static int MAX_VIDEOS = 10;
+	private static int MAX_VIDEOS = 2;
 	private static int TIME_VIDEO = 30000;
 
 	private void goToThePlaylist() {
