@@ -67,14 +67,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		assertTrue("OOOOOpps",
 			Utils.openApp(this, "Dailymotion", "com.dailymotion.dailymotion"));
 		sleep(3000);
-		String iface = getParams().getString("iface");
-		if (iface != null) {
-			Utils.launchTcpdump("dailymotion", iface);
-		}
 		goToThePlaylist();
 		seeVideos();
-		if (iface != null) {
-			Utils.killTcpdump();
-		}
 	}
 }
