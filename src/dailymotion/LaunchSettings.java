@@ -14,7 +14,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 	private static final String ID_SEARCH = "com.dailymotion.dailymotion:id/searchItem";
 	private static final String ID_TEXT = "com.dailymotion.dailymotion:id/search_src_text";
 
-	private static int MAX_VIDEOS = 4;
+	private static int MAX_VIDEOS = 2;
 	private static int TIME_VIDEO = 30000;
 
 	private void goToThePlaylist() {
