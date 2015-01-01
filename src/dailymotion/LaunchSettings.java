@@ -65,7 +65,9 @@ public class LaunchSettings extends UiAutomatorTestCase {
 
 	public void testDemo() throws UiObjectNotFoundException {
 		assertTrue("OOOOOpps",
-			Utils.openApp(this, "Dailymotion", "com.dailymotion.dailymotion"));
+				Utils.openApp(this, "Dailymotion",
+						"com.dailymotion.dailymotion",
+						"com.dailymotion.dailymotion.activity.InterstitialActivity"));
 		sleep(3000);
 		goToThePlaylist();
 		seeVideos();
