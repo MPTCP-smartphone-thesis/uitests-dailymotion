@@ -15,7 +15,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 	private static final String ID_TEXT = "com.dailymotion.dailymotion:id/search_src_text";
 
 	private static int MAX_VIDEOS = 3;
-	private static int TIME_VIDEO = 25000;
+	private static final int TIME_VIDEO = 25000;
 
 	private void goToThePlaylist() {
 		UiScrollable list = Utils.getScrollableWithId(ID_VIDEO_LIST);
@@ -68,6 +68,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 				Utils.openApp(this, "Dailymotion",
 						"com.dailymotion.dailymotion",
 						"com.dailymotion.dailymotion.activity.InterstitialActivity"));
+		MAX_VIDEOS = Math.max(1, (int) (MAX_VIDEOS * Utils.getMultTime(this)));
 		sleep(3000);
 		goToThePlaylist();
 		seeVideos();
