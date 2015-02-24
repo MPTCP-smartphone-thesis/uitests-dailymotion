@@ -26,13 +26,9 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		}
 
 		sleep(1000);
-		Utils.click(Utils.getObjectWithId(ID_SEARCH));
+		Utils.click(Utils.getObjectWithDescription("Open menu"));
 		sleep(1000);
-		Utils.setText(Utils.getObjectWithId(ID_TEXT), "conscience-tranquille");
-		getUiDevice().pressEnter();
-		sleep(1000);
-		Utils.click(Utils.getObjectWithClassName(
-				"android.widget.RelativeLayout", 0));
+		Utils.click(Utils.getObjectWithClassNameAndText("android.widget.TextView", "conscience-tranquille"));
 		sleep(1000);
 		Utils.click(new UiObject(new UiSelector().textContains("playlists")));
 		sleep(1000);
@@ -50,7 +46,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 		}
 
 		int nVid = 0;
-		while (nVid < 10 && Utils.scrollForward(list)) {
+		while (nVid < MAX_VIDEOS && Utils.scrollForward(list)) {
 			int nb_childs = Utils.getChildCount(list);
 
 			for (int i = 0; nVid < MAX_VIDEOS && i < nb_childs - 1; i++, nVid++) {
@@ -59,6 +55,7 @@ public class LaunchSettings extends UiAutomatorTestCase {
 								"android.widget.RelativeLayout", i)));
 				sleep(TIME_VIDEO);
 				getUiDevice().pressBack();
+				Utils.scrollForward(list);
 			}
 		}
 	}
